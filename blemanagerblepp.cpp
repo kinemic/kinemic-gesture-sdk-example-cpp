@@ -307,8 +307,6 @@ void BleManagerBlePP::scan(int16_t duration_ms, std::function<void(const std::st
 
 void BleManagerBlePP::stopScan() {
     std::unique_lock<std::mutex> lk(scanMutex);
-    if (mScanning) {
-        mScanning = false;
-        if (BleppScanThread.joinable()) BleppScanThread.join();
-    }
+    mScanning = false;
+    if (BleppScanThread.joinable()) BleppScanThread.join();
 }

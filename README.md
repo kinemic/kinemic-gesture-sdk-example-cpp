@@ -11,7 +11,7 @@ The sample is built using CMake and PkgConfig for dependency management.
 
 You will need to install our Gesture SDK. 
 
-Check out our [installation instructions.](https://kinemic.com/en/developerarea/installation/)
+Check out our [installation instructions.](https://kinemic.com/en/developerarea/installation/#linux)
 
 ### Libblepp BLE library
 

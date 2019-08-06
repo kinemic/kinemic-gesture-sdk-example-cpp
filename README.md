@@ -9,28 +9,9 @@ The sample is built using CMake and PkgConfig for dependency management.
 
 ### Kinemic Gesture SDK
 
-You will need to install our Gesture SDK. On Ubuntu or Debian based systems we
-provide an apt repository:
+You will need to install our Gesture SDK. 
 
-```
-deb https://kinemic.jfrog.io/kinemic/debian <distribution> main
-```
-
-Replace `distribution` with your Debian or Ubuntu distribution (we currently
-provide packages for `jessie, stretch, xenial, artful, bionic`) and either
-include the above line in your `/etc/apt/sources.list` or in
-`/etc/apt/sources.list.d/kinemic.list`.
-
-Afterwards run:
-
-```
-wget -qO- https://kinemic.jfrog.io/kinemic/api/gpg/key/public | sudo apt-key add -
-sudo apt update
-sudo apt install kinemic-sdk-dev kinemic-sdk-static
-```
-
-You can replace `kinemic-sdk-static` with `kinemic-sdk` if you want to link our
-Gesture SDK as a shared library.
+Check out our [installation instructions.](https://kinemic.com/en/developerarea/installation/)
 
 ### Libblepp BLE library
 

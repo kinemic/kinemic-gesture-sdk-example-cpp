@@ -24,14 +24,21 @@
 #include <iostream>
 #include <KinemicEngine.h>
 #include <EventHandlers.h>
+#ifdef WIN32
+#else
 #include "blemanagerblepp.h"
+#endif
 
 using namespace std;
 
 int main()
 {
     cout << "Creating Kinemic Engine on adapter hci0!" << endl;
+#ifdef WIN32
+    kinemic::KinemicEngine engine();
+#else
     kinemic::KinemicEngine engine(std::make_shared<BleManagerBlePP>("hci0"));
+#endif
 
     cout << "Registering connection state handler" << endl;
 

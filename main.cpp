@@ -21,6 +21,8 @@
  *
  */
 
+#include <map>
+#include <mutex>
 #include <iostream>
 #include <KinemicEngine.h>
 #include <EventHandlers.h>
@@ -35,7 +37,7 @@ int main()
 {
     cout << "Creating Kinemic Engine on adapter hci0!" << endl;
 #ifdef WIN32
-    kinemic::KinemicEngine engine();
+    kinemic::KinemicEngine engine;
 #else
     kinemic::KinemicEngine engine(std::make_shared<BleManagerBlePP>("hci0"));
 #endif

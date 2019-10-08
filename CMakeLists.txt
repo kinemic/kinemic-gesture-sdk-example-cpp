@@ -3,7 +3,10 @@ cmake_minimum_required(VERSION 2.8)
 project(kinemic-gesture-sdk-example-cpp)
 
 if (WIN32)
-
+  set(KINEMIC_SDK_VERSION 1.0.0)
+  include(cmake/kinemic-gesture-static.cmake)
+  set(additional_libraries Kinemic::gesture-static)
+  set(sources "")
 else()
     set(KINEMIC_SDK_VERSION 1.0.0)
     find_package(kinemic ${KINEMIC_SDK_VERSION} REQUIRED)
@@ -16,9 +19,8 @@ else()
     else()
         set(additional_libraries ${BLE_LIBRARIES} kinemicsdk)
     endif()
+    set(sources "blemanagerblepp.cpp")
 endif()
-
-set(sources "blemanagerblepp.cpp")
 
 add_executable(${PROJECT_NAME} "main.cpp" ${sources})
 target_link_libraries(${PROJECT_NAME} ${additional_libraries})

@@ -24,11 +24,14 @@
 #include <map>
 #include <mutex>
 #include <iostream>
-#include <KinemicEngine.h>
-#include <EventHandlers.h>
 #ifdef WIN32
+#include <kinemic/KinemicEngine.h>
+#include <kinemic/EventHandlers.h>
+#include <objbase.h>
 #else
 #include "blemanagerblepp.h"
+#include <KinemicEngine.h>
+#include <EventHandlers.h>
 #endif
 
 using namespace std;
@@ -37,6 +40,7 @@ int main()
 {
     cout << "Creating Kinemic Engine on adapter hci0!" << endl;
 #ifdef WIN32
+	CoInitialize(NULL);
     kinemic::KinemicEngine engine;
 #else
     kinemic::KinemicEngine engine(std::make_shared<BleManagerBlePP>("hci0"));

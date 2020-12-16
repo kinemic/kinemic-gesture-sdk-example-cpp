@@ -41,7 +41,7 @@ int main()
     cout << "Creating Kinemic Engine on default adapter!" << endl;
 
     kinemic::KinemicEngineOptions options;
-    bool use_bglib = true;
+    bool use_bglib = false;
     if (use_bglib)
     {
         options.useBlemanager(kinemic::KinemicEngineOptions::blemanager::BGLIB, "");

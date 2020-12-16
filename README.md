@@ -20,6 +20,14 @@ Check out our [installation instructions.](https://kinemic.com/en/developerarea/
 The sample application also uses [libblepp](https://github.com/edrosten/libblepp) to
 communicate with our Bands via BLE. Make sure you have this installed.
 
+```
+$ git clone https://github.com/edrosten/libblepp.git
+$ cd libblepp
+$ ./configure --prefix=/usr
+$ make
+$ sudo make install  # or use checkinstall if you want to integrate it into package management
+```
+
 ## Building
 
 After cloning the repository you can build the application:

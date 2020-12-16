@@ -15,6 +15,8 @@ else()
     find_package(PkgConfig REQUIRED)
     pkg_check_modules(BLE REQUIRED libblepp)
 
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
+
     if(TARGET kinemic-gesture-static)
         set(additional_libraries ${BLE_LIBRARIES} kinemic-gesture-static)
     else()
@@ -29,5 +31,5 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${BLE_INCLUDE_DIRS})
 target_compile_options(${PROJECT_NAME} PUBLIC ${BLE_CFLAGS_OTHER})
 
 if (WIN32)
-	target_compile_definitions(${PROJECT_NAME} PRIVATE WIN32)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE WIN32)
 endif()
